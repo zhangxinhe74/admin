@@ -1,9 +1,11 @@
 import axios from 'axios'
-export default function request(config){
+export default function request (config) {
   const instance = axios.create({
-      baseURL:'',
-      timeout:'',
+    baseURL: 'http://ttapi.research.itcast.cn/' // 请求的基础路径
   })
 
-  instance(config).then(res=>console.log(res))
+  instance(config)
+    .then(
+      res => console.log(res)
+    ).catch(err => console.log(err))
 }
